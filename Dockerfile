@@ -7,5 +7,6 @@ RUN apt-get install -y apache2
 RUN adduser mememastero
 RUN mkdir /var/www/html/memes && chown -R mememastero. /var/www/html/memes
 ADD 001-default.conf /etc/apache2/sites-enabled
+RUN a2ensite 001-default.conf && a2dissite 000-default.conf
 RUN service apache2 start && systemctl enable apache2
 EXPOSE 21 22 80 443 8080
