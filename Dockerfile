@@ -8,5 +8,6 @@ RUN adduser mememastero
 RUN mkdir /var/www/html/memes && chown -R mememastero. /var/www/html/memes
 ADD 001-default.conf /etc/apache2/sites-available
 RUN ln -s /etc/apache2/sites-available/001-default.conf /etc/apache2/sites-enabled && a2ensite 001-default.conf && a2dissite 000-default.conf
-RUN service apache2 start && systemctl enable apache2
+RUN systemctl enable apache2
+CMD service apache2 start
 EXPOSE 21 22 80 443 8080
