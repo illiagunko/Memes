@@ -7,5 +7,5 @@ RUN apt-get install -y apache2 && systemctl enable apache2
 RUN service apache2 start
 RUN adduser mememastero
 RUN mkdir /var/www/html/memes && chown -R mememastero. /var/www/html/memes
-ADD "https://github.com/illiagunko/Memes/blob/master/001-default.conf" /etc/apache2/sites-enabled
+ADD 001-default.conf /etc/apache2/sites-enabled
 EXPOSE 21 22 80 443 8080
